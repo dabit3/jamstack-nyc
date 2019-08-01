@@ -69,6 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 #amplify
+amplify/team-profider-info.json
 amplify/\#current-cloud-backend
 amplify/.config/local-*
 amplify/backend/amplify-meta.json
