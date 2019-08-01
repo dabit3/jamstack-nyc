@@ -7,6 +7,17 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'Talk',
+        fieldName: 'talks',
+        url: 'https://chxb2spfcjh3hk5wsligepjbo4.appsync-api.us-east-1.amazonaws.com/graphql',
+        headers: {
+          'x-api-key': 'da2-evlqmqpbpjchdown76jiz73awq'
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

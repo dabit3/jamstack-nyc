@@ -1,0 +1,6 @@
+type Talk @model {
+  id: ID!
+  name: String!
+  description: String!
+  speakerName: String!
+}

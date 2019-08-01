@@ -1,0 +1,19 @@
+{
+    "testing": {
+        "awscloudformation": {
+            "AuthRoleName": "jamstack-meetup-testing-20190801091328-authRole",
+            "UnauthRoleArn": "arn:aws:iam::557458351015:role/jamstack-meetup-testing-20190801091328-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::557458351015:role/jamstack-meetup-testing-20190801091328-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "jamstack-meetup-testing-20190801091328-deployment",
+            "UnauthRoleName": "jamstack-meetup-testing-20190801091328-unauthRole",
+            "StackName": "jamstack-meetup-testing-20190801091328",
+            "StackId": "arn:aws:cloudformation:us-east-1:557458351015:stack/jamstack-meetup-testing-20190801091328/4b2589d0-b477-11e9-9f91-0a9ef6cbb06a"
+        },
+        "categories": {
+            "auth": {
+                "jamstackmeetup1917d54b": {}
+            }
+        }
+    }
+}

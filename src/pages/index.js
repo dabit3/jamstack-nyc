@@ -1,21 +1,49 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+import Amplify from 'aws-amplify'
+import config from '../aws-exports'
+Amplify.configure(config)
+
+console.log('Amplify: ', Amplify)
+
+export const query = graphql`
+  query list {
+    talks {
+      listTalks {
+        items {
+          id
+          name
+          description
+          speakerName
+        }
+      }
+    }
+  }
+`
+
+const IndexPage = ({ data }) => {
+  console.log('data: ', data)
+  return (
+    <Layout>
+      <h1>Hi people</h1>
+      <p>Welcome to your new Gatsby site.</p>
+      <p>Now go build something great.</p>
+     
+      {
+        data.talks.listTalks.items.map((i, index) => (
+          <div>
+            <h2 key={index}>{i.speakerName}</h2>
+            <p key={index}>{i.name}</p>
+            <p key={index}>{i.description}</p>
+          </div>
+        ))
+      }
+      <Link to="/protected">Protected</Link>
+    </Layout>
+  )
+}
 
 export default IndexPage
